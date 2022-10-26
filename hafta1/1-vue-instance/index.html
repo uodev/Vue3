@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3 Instance</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      {{changeTitle('başlangıçta değişecek')}}
+      <h1>{{title}}</h1>
+      <p>{{content}}</p>
+      <a
+        :target="eduflow.target"
+        :href="eduflow.url"
+        :alt="eduflow.alt"
+        :kablosuzkedi="owner"
+      >
+        {{eduflow.title}}</a
+      >
+      <br />
+      <br />
+
+      <button v-on:click="changeTitle('bu 1. buton')">Title değiştir...</button>
+      <button v-on:click="changeTitle('bu 2. buton')">
+        Title2 değiştir...
+      </button>
+
+      <div
+        @mousemove="updateCoords"
+        class="box"
+        @click="changeTitle('Box\'dan gelen title')"
+      ></div>
+      <span>x: {{coords.x}}, y: {{coords.y}}</span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
