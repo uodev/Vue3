@@ -5,6 +5,6 @@ import store from "./store";
 
 const app = createApp(App);
 
-app.use(store); //! middleware
+app.use(store);
 
 app.mount("#app");

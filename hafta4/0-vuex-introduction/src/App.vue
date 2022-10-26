@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <UserList />
+    <br />
+    <hr />
+    <br />
+
+    <NewUser />
+
+    <!-- <ul>
+      <li v-for="(item, index) in agacElemanlari" :key="index">
+        {{ item.title }}
+      </li>
+    </ul> -->
+    <!-- {{ $store.state.fullName }} -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import UserList from "@/components/UserList.vue";
+import NewUser from "@/components/NewUser.vue";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    UserList,
+    NewUser,
+  },
+  created() {
+    // console.log(this.$store.state.user);
+    // // console.log(this.$store.state.itemList.filter((i) => i.type === "Mutfak")); !kolay kullanımı aşağıda
+    // //! kolay kullanım
+    // console.log(this.$store.getters.woodItems);
+    // console.log(this.aktifKullanici);
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
